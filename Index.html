@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi primera página</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+
+        .contenedor {
+            text-align: center;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>Bienvenidos al ejemplo para Didactica Especifica.</h1>
+
+        <p>Escribí tu nombre:</p>
+        <input type="text" id="nombre">
+
+        <br>
+
+        <button onclick="saludar()">Saludar</button>
+
+        <p id="mensaje"></p>
+
+    </div>
+
+    <script>
+        function saludar() {
+            var nombre = document.getElementById("nombre").value;
+
+            // Validación: no vacío y solo letras
+            var soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/;
+
+            if (nombre === "" || !soloLetras.test(nombre)) {
+                document.getElementById("mensaje").innerHTML = 
+                "Por favor chicos ingresen un nombre correcto.";
+            } else {
+                document.getElementById("mensaje").innerHTML = 
+                "Hola " + nombre + ", estás en una prueba para mostrar los resultados de la programación en HTML para el PROFESORADO DE TECNOLOGIA de Esquina Corrientes!";
+            }
+        }
+    </script>
+
+</body>
+</html>
